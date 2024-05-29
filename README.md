@@ -1,22 +1,27 @@
-# llm-finetuning
-LLM Finetuning: Enabling Quality Embedding and Text Generation for Amharic, Swahili, and Yoruba Languages
+# LLM Amharic
+The best Amharic Large language model! Our goal is to help African businesses by using new technology in AI. By using advanced AI, this project aims to provide smooth, Amharic support across different platforms.
+
+This repository contains scripts and instructions to fine-tune the LLaMA-2-7b-chat model for Amharic customer support using data stored in a PostgreSQL database.
+
 
 ## Project Structure
 ```
 llm-amharic/
 ├── api/
-│ ├── app.py
+│ └──  app.py
 ├── docker/
 │ ├── Dockerfile
-│ ├── docker-compose.yml
+│ └── docker-compose.yml
 ├── scripts/
-│ ├── inference_script.py
-│ ├── docker-compose.yml
+│ └── inference_script.py
 ├── scripts/
-│ ├── finetuning
-    ├── finetuning.py
-│ ├── pretrain
-    ├── pretrain.py
+│ └── finetuning
+│   └─ finetuning.py
+├── pretrain/
+│ └── pretrain.py
+├── utils/
+│ ├── data_preprocessing.py
+│ └── fetch_data_from_db.py
 ├── .gitignore
 └── README.md
 ```
@@ -28,7 +33,8 @@ llm-amharic/
 
 - Python 3.8+
 - PostgreSQL
-- Docker
+- CUDA-enabled GPU (optional but recommended for training)
+
 
 ### Installation
 
@@ -39,11 +45,21 @@ llm-amharic/
     cd llm-amharic
     ```
 
-2. **Run the project with Docker:**
+2. **Set up a virtual environment:**
 
     ```sh
-    docker-compose up
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
     ```
+3. **Install Requirements:**
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+## Database Setup
+Ensure your PostgreSQL database is set up with the required data. The table should have a column containing the Amharic text data for training.
+
+
     
 ## Contributing
 
@@ -57,4 +73,13 @@ llm-amharic/
 
 This project is licensed under the MIT License.
 
-## Contributers
+
+## Contributors
+
+- [@abyt101](https://github.com/AbYT101) - Abraham Teka
+
+<br>
+
+## Challenge by
+
+![10 Academy](https://static.wixstatic.com/media/081e5b_5553803fdeec4cbb817ed4e85e1899b2~mv2.png/v1/fill/w_246,h_106,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/10%20Academy%20FA-02%20-%20transparent%20background%20-%20cropped.png)
