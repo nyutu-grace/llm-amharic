@@ -1,6 +1,3 @@
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from huggingface_hub import login
-
 import os
 from dotenv import load_dotenv
 
@@ -8,12 +5,16 @@ load_dotenv()
 
 api_token = os.getenv('API_TOKEN')
 
+
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from huggingface_hub import login
+
 login(api_token)
 
 # Load the tokenizer and model with quantization
-tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-hf")
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
 model = AutoModelForCausalLM.from_pretrained(
-    "meta-llama/Llama-2-7b-hf",
+    "meta-llama/Llama-2-7b-chat-hf",
     load_in_8bit=True,  # Use 8-bit quantization
     device_map="auto"   # Automatically map model to available devices (GPU)
 )
