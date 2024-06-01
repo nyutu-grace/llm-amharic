@@ -60,6 +60,7 @@ llm-amharic/
 Ensure your PostgreSQL database is set up with the required data. The table should have a column containing the Amharic text data for training.
 
 ### Usage
+
 To test the inference of the model being used you'll need to follow this steps:
 
 1. Accept Llama2 license on huggingface and download it like this:
