@@ -176,7 +176,6 @@ training_arguments = TrainingArguments(
 
 """Initialize SFTTrainer"""
 
-!pip install -q trl
 
 from trl import SFTTrainer
 
