@@ -11,12 +11,6 @@ import pandas as pd
 import json
 import time
 
-!pip install datasets transformers[sentencepiece]
-!pip install -q accelerate==0.26.1 --progress-bar off
-!pip install -q peft==0.4.0 --progress-bar off
-!pip install -q bitsandbytes==0.42.0 --progress-bar off
-!pip install -q transformers==4.36.2 --progress-bar off
-!pip install -q trl==0.4.7 --progress-bar off
 
 import os
 from random import randrange
